@@ -8,6 +8,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
+ * cella sepecifequement on peut pas la mettre dans un form (comme on a fait pour le reste des erreurs
+ * dans RegistrationFormType.php ) pck elle est lié a une entity pas a un formulaire
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"email"}, message="CETTE ADRESSE EMAIL EST DEJA UTILISEE")
  */

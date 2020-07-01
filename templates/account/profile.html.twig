@@ -1,0 +1,24 @@
+{% extends "_template.html.twig" %}
+
+{% block title %}
+    profile
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">mon profile</h1>
+        {#        //pour afficher les message flashes qu'on a déclarer dans AcountController #}
+        {% include 'includes/flashes.html.twig' %}
+        {{ form_start(updateProfileForm) }}
+
+        {{ form_row(updateProfileForm.email,{
+            label:'ma nouvelle adresse :'
+        }) }}
+
+        <button type="submit" class="button is-primary ">
+            Enregistrer
+        </button>
+
+        {{ form_end(updateProfileForm) }}
+    </div>
+{% endblock %}
