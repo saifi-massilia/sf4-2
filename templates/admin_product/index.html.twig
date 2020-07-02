@@ -1,0 +1,65 @@
+{% extends '_admin_template.html.twig' %}
+
+{% block title %}
+    Liste des produits
+{% endblock %}
+{% block content %}
+ <div class="section">
+     <h1 class="title">
+         liste des produits
+
+     </h1>
+
+
+    <a href="{{ path('admin_product_add') }}" class="button is-success mb-4">
+        Nouveau produit
+    </a>
+
+     {% include 'includes/flashes.html.twig' %}
+
+
+     <table class="table is-fullwidth">
+         <thead>
+         <tr>
+             <th>#</th>
+             <th>Nom</th>
+             <th>Description</th>
+             <th>Prix</th>
+             <th>Creation</th>
+             <th></th>
+         </tr>
+         </thead>
+         <tbody>
+         {% for product in product_list  %}
+
+             <tr>
+                 <td>{{ product.id }}</td>
+                 <td><a href="{{ path('product_show',{ id:product.id }) }}" target="_blank">
+                         {{ product.name }}
+                     </a>
+                     </td>
+
+
+                 <td>{{ product.description|slice(0,25) }}</td>
+                 <td>{{ product.priceFloat|number_format(2,'.',' ')}} $</td>
+                 <td>{{ product.createdAt|date('d/m/Y') }}</td>
+                 <td>
+                     <a href="{{ path('admin_product_edit', {id:product.id}) }}" class="button is-success">Modifier    </a>
+                     <a href="{{ path('admin_product_delete', {id:product.id}) }}" class="button is-danger"> Supprimer  </a>
+                 </td>
+             </tr>
+
+         {% endfor %}
+        {#boucle sur product_list:
+         colonne nom: lien vers la page produit
+         colonne prix : formatter en 123 456.78 $
+         colonne ceration : formatter en 02/07/2020
+         colonne boutons  modifier et supprimer
+         #}
+         </tbody>
+     </table>
+ </div>
+{% endblock %}
+
+
+

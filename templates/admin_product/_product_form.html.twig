@@ -1,0 +1,20 @@
+{# ouvrir & fermer le formulaire #}
+        {{ form_start(product_form) }}
+
+
+        {{ form_row(product_form.name, {
+            label:'Nom du produit:'
+        }) }}
+
+        {{ form_row(product_form.description, {
+            label:'Description du produit:'
+        }) }}
+
+        {{ form_row(product_form.price, {
+            label:'prix:'
+        }) }}
+
+<button type="submit" class="button is-success">
+    Enregistrer
+</button>
+{{ form_end(product_form) }}
