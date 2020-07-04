@@ -67,13 +67,7 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();                                #"obtenir un tableau d'entités "
     }
 
-    /*
-             SELECT  t0.id, t0.name, ...
-             FROM product t0
-             WHERE t0.created_at >= :last_month
-             ORDER BY t0.created_at
-          */
-    /* */
+
 
     /**
      * ici commentaires

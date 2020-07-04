@@ -30,7 +30,17 @@
 {#                    {{ path('name dans product controller') }}#}
                    Produits
                 </a>
+
+                {% include 'includes/_menu_category.html.twig' with {category_list : categories} %}
+
+
+
             </div>
+
+
+
+
+
 
             <div class="navbar-end">
                 <div class="navbar-item">

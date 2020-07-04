@@ -1,0 +1,16 @@
+{% extends "_admin_template.html.twig" %}
+{% block title %}
+    Nouvelle Catégorie
+
+{% endblock %}
+{% block content %}
+    <div class="section">
+        <h1 class="title"> Nouvelle Catégorie </h1>
+
+        <a href="{{ path('admin_category_add') }}" class="button is-success mb-4">
+            ajouter une catégorie
+        </a>
+
+        {% include 'admin_category/_category_form.html.twig' %}
+    </div>
+{% endblock %}

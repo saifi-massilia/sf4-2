@@ -18,6 +18,8 @@
                                 <br>
                                 {{ product.description|slice(0, 50) }} {#limiter l'affichage a 50 caractere #}
                             </p>
+
+
                             <div class="tags has-addons">
                                 <span class="tag">{{ product.priceFloat|number_format(2, '.', ' ') }}</span>
                                 <span class="tag is-primary">
@@ -26,6 +28,11 @@
                                             </span>
                                         </span>
                             </div>
+
+                            <p><a href="#" class="has-text-primary">
+                                    {{ product.category.name }}
+                                </a></p>
+
                         </div>
                     </div>
                 </article>

@@ -1,0 +1,19 @@
+
+
+<div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link">
+        Catégories
+    </a>
+
+    <div class="navbar-dropdown">
+
+        {% for category in category_list  %}
+            <a href="{{ path('product_by_category',{id:category.id}) }}" class="has-text-primary">
+                <strong>{{ category.name }}</strong>
+            </a>
+            <hr class="navbar-divider">
+        {% endfor %}
+
+
+    </div>
+</div>

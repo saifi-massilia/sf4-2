@@ -1,0 +1,14 @@
+{% extends "_template.html.twig" %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block content %}
+
+    <div class="section">
+        <h1 class="title">Tous les produits de la catégorie:  {{ category.name }}:</h1>
+        {#inclusion de fichier & passage de variables#}
+        {% include 'includes/product_list.html.twig' with {products : category.products} %}
+    </div>
+{% endblock %}

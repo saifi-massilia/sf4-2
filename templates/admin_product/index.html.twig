@@ -15,6 +15,7 @@
         Nouveau produit
     </a>
 
+
      {% include 'includes/flashes.html.twig' %}
 
 
@@ -23,6 +24,7 @@
          <tr>
              <th>#</th>
              <th>Nom</th>
+             <th>Category</th>
              <th>Description</th>
              <th>Prix</th>
              <th>Creation</th>
@@ -39,6 +41,10 @@
                      </a>
                      </td>
 
+{#                afficher le nom de la catégorie de chaque produit:- dans le Back-Office, dans le tableau de la liste des produits#}
+                 <td>
+                     <a href="#" target="_blank">  {{ product.category.name }}  </a>
+                 </td>
 
                  <td>{{ product.description|slice(0,25) }}</td>
                  <td>{{ product.priceFloat|number_format(2,'.',' ')}} $</td>

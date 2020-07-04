@@ -1,14 +1,14 @@
 {% extends "_admin_template.html.twig" %}
 {% block title %}
-    Supprimer le produit {{ product.name }}
+    Supprimer la catégorie {{ category.name }}
 {% endblock %}
 
 {% block content %}
     <div class="section">
-        <h1 class="title">Supprimer le produit {{ product.name }}</h1>
+        <h1 class="title">Supprimer la catégorie {{ category.name }}</h1>
         {{ form_start(deletion_form) }}
         {{ form_row(deletion_form.confirmation, {
-            label: 'Je confirme la suppression du produit"' ~ product.name ~ '"'
+            label:'Je confirme la suppression du produit"' ~ category.name ~ '"'
         }) }}
 
 
